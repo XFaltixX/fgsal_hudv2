@@ -1,0 +1,1 @@
+A FiveM ESX Hud that's positioned at the right of the minimap

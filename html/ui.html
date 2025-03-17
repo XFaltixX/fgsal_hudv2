@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FGSAL HUD - COPYRIGHT BY DR.FIREGOD AND SIRALPAKALEON</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" type="text/css" href="grid.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script> <!-- Changed to HTTPS -->
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+<div id="ui">
+    <div class="playerStats">
+        <div class="stat" id="playerid">
+          <div class="icon" id="playeriduser"><img src="img/person.png"></div><span>ID wird geladen...</span>
+        </div>
+        <div class="stat" id="money">
+            <div class="icon"><img src="img/wallet.png"></div><span>Bargeld wird geladen...</span>
+        </div>
+        <div class="stat" id="job">
+            <div class="icon"><img src="img/jobs/unemployed.png"></div><span>Beruf wird geladen...</span>
+        </div>
+        <div class="stat" id="date2">
+            <div class="icon" id="dateIcon"><img src="img/time.png" style="width: 20px; height: 20px;"></div><span id="timeSpan">Zeit wird geladen...</span>
+        </div>
+
+        <div class="status">
+            <div class="vert-stat" id="hunger">
+                <div class="bg" style="background: linear-gradient(to right, #5166db, #9442e0);"></div>
+                <img src="img/hunger.png">
+            </div>
+            <div class="vert-stat" id="water">
+                <div class="bg" style="background: linear-gradient(to right, #3F69D6, #EE5ED2, #F39169);"></div>
+                <img src="img/water.png">
+            </div>
+            <div class="vert-stat" id="voice">
+                <div class="bg" style="background-color: #81c78400; height: 100%;"></div>
+                <img src="img/speaker.png">
+            </div>
+        </div>
+    </div>
+
+<script>
+    function getTime() {
+          var currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var date = currentTime.getDate();
+          var month = currentTime.getMonth() + 1; 
+          var year = currentTime.getFullYear();
+          var formattedDate = date + "." + month + "." + year;
+          hours = (hours < 10 ? "0" : "") + hours;
+          minutes = (minutes < 10 ? "0" : "") + minutes;
+          seconds = (seconds < 10 ? "0" : "") + seconds;
+          var timeElement = document.getElementById("timeSpan"); 
+          timeElement.innerHTML = " " + date + "." + month + "." + year + " | " + hours + ":" + minutes + " Uhr";
+        }
+     setInterval(getTime, 1000);
+  </script>
+
+</body>
+</html>
